@@ -73,9 +73,3 @@ def substract(a, b):
     :return: a 2 dimensional array
     """
     return add(a, multiply_matrix_by_real(b, -1))
-
-
-if __name__ == "__main__":
-    b = [[3, 0, 0], [2, 2, 0], [1, 1, 1]]
-    print(len(b[0]))
-    show(multiply_matrix_by_matrix([[3, 0, 0], [2, 2, 0]], [[3, 0, 0], [2, 2, 0], [1, 1, 1]]))
