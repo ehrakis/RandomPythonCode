@@ -65,7 +65,7 @@ def multiply_matrix_by_real(a, real):
     return [[j*real for j in i] for i in a]
 
 
-def substract(a, b):
+def subtract(a, b):
     """
     Return the result of a+b
     :param a: a 2 dimensional array
