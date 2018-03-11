@@ -27,3 +27,42 @@ def show(matrix):
         print("")
 
 
+def add(a, b):
+    """
+    Return the result of A+B
+    :param a: a 2 dimensional array of numbers
+    :param b: a 2 dimensional array of numbers
+    :return: a 2 dimensional array of numbers
+    """
+    return [[a[i][j] + b[i][j] for j in range(len(a[i]))] for i in range(len(a))]
+
+
+def multiply_matrix_by_matrix(a, b):
+    """
+
+    :param a:
+    :param b:
+    :return:
+    """
+
+
+def multiply_matrix_by_real(a, b):
+    """
+
+    :param a:
+    :param b:
+    :return:
+    """
+
+
+def substract(a, b):
+    """
+
+    :param a:
+    :param b:
+    :return:
+    """
+
+
+if __name__ == "__main__":
+    show(add(identity(3), identity(3)))
