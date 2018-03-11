@@ -39,11 +39,20 @@ def add(a, b):
 
 def multiply_matrix_by_matrix(a, b):
     """
-
-    :param a:
-    :param b:
-    :return:
+    Return result of a*b
+    :param a: a 2 dimensional array
+    :param b: a 2 dimensional array
+    :return: a 2 dimensional array
     """
+    c = [[0 for x in range(len(b[0]))] for z in range(len(a))]
+    show(c)
+    for i in range(len(c)):
+        for j in range(len(c[i])):
+            x = 0
+            for k in range(len(b[0])):
+                x += a[i][k] * b[k][j]
+            c[i][j] = x
+    return c
 
 
 def multiply_matrix_by_real(a, real):
@@ -67,4 +76,6 @@ def substract(a, b):
 
 
 if __name__ == "__main__":
-    show(substract(identity(3), multiply_matrix_by_real(identity(3), 5)))
+    b = [[3, 0, 0], [2, 2, 0], [1, 1, 1]]
+    print(len(b[0]))
+    show(multiply_matrix_by_matrix([[3, 0, 0], [2, 2, 0]], [[3, 0, 0], [2, 2, 0], [1, 1, 1]]))
