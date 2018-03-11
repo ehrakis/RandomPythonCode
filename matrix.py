@@ -44,7 +44,7 @@ def multiply_matrix_by_matrix(a, b):
     :param b: a 2 dimensional array
     :return: a 2 dimensional array
     """
-    c = [[0 for x in range(len(b[0]))] for z in range(len(a))]
+    c = [[0 for _ in range(len(b[0]))] for _ in range(len(a))]
     show(c)
     for i in range(len(c)):
         for j in range(len(c[i])):
