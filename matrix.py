@@ -58,9 +58,13 @@ def multiply_matrix_by_real(a, real):
 
 def substract(a, b):
     """
-
-    :param a:
-    :param b:
-    :return:
+    Return the result of a+b
+    :param a: a 2 dimensional array
+    :param b: a 2 dimensional array
+    :return: a 2 dimensional array
     """
+    return add(a, multiply_matrix_by_real(b, -1))
 
+
+if __name__ == "__main__":
+    show(substract(identity(3), multiply_matrix_by_real(identity(3), 5)))
