@@ -22,7 +22,7 @@ def show(matrix):
     :param matrix: a 2 dimensional array
     """
     for i in range(len(matrix)):
-        for j in range(len(matrix)):
+        for j in range(len(matrix[i])):
             print(matrix[i][j], end=" " if j != len(matrix)-1 else "")
         print("")
 
