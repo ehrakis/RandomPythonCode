@@ -72,3 +72,26 @@ def subtract(a, b):
     :return: a 2 dimensional array
     """
     return add(a, multiply_matrix_by_real(b, -1))
+
+
+def delete_row(a, rownumber):
+    """
+    Return the matrix a without row rownumber
+    If rownumber is not correct (between 0 et len(a)-1) the function return the a matrix without modification
+    :param a: a 2 dimensional array
+    :param rownumber: an int between 0 et len(a)-1
+    :return: a 2 dimensional array
+    """
+    return [[a[i][j] for j in range(len(a[i]))] for i in range(len(a)) if i != rownumber]
+
+
+def delete_col(a, colnumber):
+    """
+    Return the matrix a without row colnumber
+    If colnumber is not correct (between 0 et len(a[0])-1) the function return the a matrix without modification
+    :param a: a 2 dimensional array
+    :param colnumber: an int between 0 et len(a[0])-1
+    :return: a 2 dimensional array
+    """
+    return [[a[i][j] for j in range(len(a[i])) if j != colnumber] for i in range(len(a))]
+
