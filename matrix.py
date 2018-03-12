@@ -95,3 +95,44 @@ def delete_col(a, colnumber):
     """
     return [[a[i][j] for j in range(len(a[i])) if j != colnumber] for i in range(len(a))]
 
+
+def transpose(a):
+    """
+    Return the transpose of a
+    :param a: a 2 dimensional array
+    :return: a 2 dimensional array
+    """
+    return [[a[j][i] for j in range(len(a[i]))] for i in range(len(a))]
+
+
+def determinant(a):
+    """
+    Return the determinant of the matrix a
+    :param a: a 2 dimensional array
+    :return: a real
+    """
+    if len(a) == 2:
+        return a[0][0]*a[1][1]-a[0][1]*a[1][0]
+    else:
+        det = 0
+        for i, j in enumerate(a[0]):
+            det += pow(-1, i) * j * determinant(delete_row(delete_col(a, i), 0))
+        return det
+
+
+def adjugate(a):
+    """
+    Return the adjugate matrix of a
+    :param a: a 2 dimensional array
+    :return: a 2 dimensional array
+    """
+    return [[pow(-1, i+j) * determinant(delete_col(delete_row(a, j), i)) for i in range(len(a))] for j in range(len(a))]
+
+
+def inverse(a):
+    """
+    Return the inverse matrix of a
+    :param a: a 2 dimensional array
+    :return: a 2 dimensional array
+    """
+    return multiply_matrix_by_real(transpose(adjugate(a)), 1/determinant(a))
