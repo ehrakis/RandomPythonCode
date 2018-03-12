@@ -118,3 +118,12 @@ def determinant(a):
         for i, j in enumerate(a[0]):
             det += pow(-1, i) * j * determinant(delete_row(delete_col(a, i), 0))
         return det
+
+
+def adjugate_matrix(a):
+    """
+    Return the adjugate matrix of a
+    :param a: a 2 dimensional array
+    :return: a 2 dimensional array
+    """
+    return [[pow(-1, i+j) * determinant(delete_col(delete_row(a, j), i)) for i in range(len(a))] for j in range(len(a))]
