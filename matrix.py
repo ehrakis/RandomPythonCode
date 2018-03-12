@@ -120,7 +120,7 @@ def determinant(a):
         return det
 
 
-def adjugate_matrix(a):
+def adjugate(a):
     """
     Return the adjugate matrix of a
     :param a: a 2 dimensional array
