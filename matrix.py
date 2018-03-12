@@ -95,3 +95,11 @@ def delete_col(a, colnumber):
     """
     return [[a[i][j] for j in range(len(a[i])) if j != colnumber] for i in range(len(a))]
 
+
+def transpose(a):
+    """
+    Return the transpose of a
+    :param a: a 2 dimensional array
+    :return: a 2 dimensional array
+    """
+    return [[a[j][i] for j in range(len(a[i]))] for i in range(len(a))]
