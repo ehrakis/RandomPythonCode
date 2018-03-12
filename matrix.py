@@ -113,3 +113,8 @@ def determinant(a):
     """
     if len(a) == 2:
         return a[0][0]*a[1][1]-a[0][1]*a[1][0]
+    else:
+        det = 0
+        for i, j in enumerate(a[0]):
+            det += pow(-1, i) * j * determinant(delete_row(delete_col(a, i), 0))
+        return det
