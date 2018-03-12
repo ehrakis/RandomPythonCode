@@ -27,3 +27,71 @@ def show(matrix):
         print("")
 
 
+def add(a, b):
+    """
+    Return the result of a+b
+    :param a: a 2 dimensional array of numbers
+    :param b: a 2 dimensional array of numbers
+    :return: a 2 dimensional array of numbers
+    """
+    return [[a[i][j] + b[i][j] for j in range(len(a[i]))] for i in range(len(a))]
+
+
+def multiply_matrix_by_matrix(a, b):
+    """
+    Return result of a*b
+    :param a: a 2 dimensional array
+    :param b: a 2 dimensional array
+    :return: a 2 dimensional array
+    """
+    c = [[0 for _ in range(len(b[0]))] for _ in range(len(a))]
+    for i in range(len(c)):
+        for j in range(len(c[i])):
+            x = 0
+            for k in range(len(b[0])):
+                x += a[i][k] * b[k][j]
+            c[i][j] = x
+    return c
+
+
+def multiply_matrix_by_real(a, real):
+    """
+    Return result of real*a
+    :param a: a 2 dimensional array
+    :param real: a real
+    :return: a 2 dimensional array
+    """
+    return [[j*real for j in i] for i in a]
+
+
+def subtract(a, b):
+    """
+    Return the result of a+b
+    :param a: a 2 dimensional array
+    :param b: a 2 dimensional array
+    :return: a 2 dimensional array
+    """
+    return add(a, multiply_matrix_by_real(b, -1))
+
+
+def delete_row(a, rownumber):
+    """
+    Return the matrix a without row rownumber
+    If rownumber is not correct (between 0 et len(a)-1) the function return the a matrix without modification
+    :param a: a 2 dimensional array
+    :param rownumber: an int between 0 et len(a)-1
+    :return: a 2 dimensional array
+    """
+    return [[a[i][j] for j in range(len(a[i]))] for i in range(len(a)) if i != rownumber]
+
+
+def delete_col(a, colnumber):
+    """
+    Return the matrix a without row colnumber
+    If colnumber is not correct (between 0 et len(a[0])-1) the function return the a matrix without modification
+    :param a: a 2 dimensional array
+    :param colnumber: an int between 0 et len(a[0])-1
+    :return: a 2 dimensional array
+    """
+    return [[a[i][j] for j in range(len(a[i])) if j != colnumber] for i in range(len(a))]
+
