@@ -103,3 +103,13 @@ def transpose(a):
     :return: a 2 dimensional array
     """
     return [[a[j][i] for j in range(len(a[i]))] for i in range(len(a))]
+
+
+def determinant(a):
+    """
+    Return the determinant of the matrix a
+    :param a: a 2 dimensional array
+    :return: a real
+    """
+    if len(a) == 2:
+        return a[0][0]*a[1][1]-a[0][1]*a[1][0]
