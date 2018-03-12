@@ -127,3 +127,12 @@ def adjugate(a):
     :return: a 2 dimensional array
     """
     return [[pow(-1, i+j) * determinant(delete_col(delete_row(a, j), i)) for i in range(len(a))] for j in range(len(a))]
+
+
+def inverse(a):
+    """
+    Return the inverse matrix of a
+    :param a: a 2 dimensional array
+    :return: a 2 dimensional array
+    """
+    return multiply_matrix_by_real(transpose(adjugate(a)), 1/determinant(a))
