@@ -11,6 +11,7 @@ def compute_bowling_score(falling_skittles: list[int]):
 
             if is_first_throw:
                 multiplicator[index+2] += 1
+                # Will be toggled to True
                 is_first_throw = False
 
         result += skittle * multiplicator[index]
