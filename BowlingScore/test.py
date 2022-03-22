@@ -24,5 +24,8 @@ class TestBowlingScore(unittest.TestCase):
     def test_multi_strike(self):
         self.assertEqual(compute_bowling_score([10,10,10,10]),90)
 
+    def test_spare_and_strike(self):
+        self.assertEqual(compute_bowling_score([10,3,7,5,3,5,5,7,2,5]),74)
+
 if __name__ == "__main__":
     unittest.main()
